@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ar Toy Shop</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>    
+
+<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"crossorigin="anonymous"/>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDWXJqbAydXJwHO6VIZfn_bF8guAX0c4Gs",
+  authDomain: "toy-store-ar.firebaseapp.com",
+  databaseURL: "https://toy-store-ar-default-rtdb.firebaseio.com",
+  projectId: "toy-store-ar",
+  storageBucket: "toy-store-ar.appspot.com",
+  messagingSenderId: "200730703670",
+  appId: "1:200730703670:web:ba3cb327a5b33ef8d52597",
+  measurementId: "G-7SKPLPN84Q"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+</script>
+
+<link href="./style.css" rel="stylesheet" />
+
+<!--JS Files-->
+<script src="./js/addButtons.js"></script>
+<script src="./js/addMarkers.js"></script>
+<script src="./js/markerhandler.js"></script>
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+
+<a-scene id="main-scene"vr-mode-ui="enabled: false"embedded arjs="sourceType: webcam;sourceWidth:1280; sourceHeight:960;displayWidth: 1280; displayHeight: 960;debugUIEnabled: false;"gesture-detector createbuttons createmarkers>
+<a-entity camera></a-entity>
+</a-scene>
+
+<!-- Button Main Div -->
+<div id="button-div"></div>
+</body>
+</html>
